@@ -1,0 +1,153 @@
+% ====================================================================
+%    ___ ___ ___  __ ___ 
+%   / _ (_-</ _ \/ _/ _ \
+%   \___/__/\___/\__\___/
+%
+%   ~ La Empresa de los Programadores Profesionales ~
+%
+%
+%  | http://www.osoco.es
+%  |
+%  | Edificio Moma Lofts
+%  | Planta 3, Loft 18
+%  | Ctra. Mostoles-Villaviciosa, Km 0,2
+%  | Mostoles, Madrid 28935 España
+%
+% ====================================================================
+%
+% Copyright 2012 OSOCO.
+%
+% by Rafael Luque
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ProvidesPackage{beamerouterthemeosoco2012}
+
+\RequirePackage{tikz}
+
+\ifosoco@dark%
+  \def\osoco@coverimage{osoco-cover-dark}
+  \def\osoco@coverbackgroundimage{defaultbackground-dark.jpg}
+  \def\osoco@backgroundimage{osoco-bg-dark}
+\else%
+  \def\osoco@coverimage{osoco-cover-light}
+  \def\osoco@coverbackgroundimage{defaultbackground-light.jpg}
+  \def\osoco@backgroundimage{osoco-bg-light}
+\fi%
+
+\DeclareOptionBeamer{coverbackgroundimage}{\def\osoco@coverbackgroundimage{#1}}
+
+\ProcessOptionsBeamer
+
+
+\mode<presentation>
+
+
+\pgfdeclareimage[interpolate=true, height=\the\paperheight, width=\the\paperwidth]{coverBackgroundImage}{\osoco@coverbackgroundimage}
+
+\pgfdeclareimage[interpolate=true, height=\the\paperheight, width=\the\paperwidth]{coverImage}{\osoco@coverimage}
+
+\pgfdeclareimage[interpolate=true, height=\the\paperheight, width=\the\paperwidth]{backgroundImage}{\osoco@backgroundimage}
+
+% -------------------------------------------------------------------------------
+% Title page
+
+\setbeamertemplate{title page} {
+
+  \vskip-1pt
+
+  \hbox{\hskip-\Gm@lmargin
+    \begin{tikzpicture}
+	  \useasboundingbox (0,0) rectangle (\the\paperwidth, \the\paperheight) ; 
+	  \pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\pgfuseimage{coverBackgroundImage}} ; 
+    \end{tikzpicture}
+  }
+    
+  \vskip-1\paperheight
+
+  \hbox{\hskip-\Gm@lmargin
+    \begin{tikzpicture}
+	  \useasboundingbox (0,0) rectangle (\the\paperwidth, \the\paperheight) ; 
+	  \pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\pgfuseimage{coverImage}} ; 
+    \end{tikzpicture}
+  }  
+
+  \vskip-1\paperheight
+
+  % Title
+  \usebeamercolor[fg]{title in cover}
+  \hbox{\hskip-.01\paperwidth
+    \vbox{
+      \vskip.1\paperheight
+      \usebeamerfont{title}\inserttitle\par
+    }
+  }
+
+  \usebeamercolor[fg]{frametitle}
+  % The optional subtitle
+  \ifx\insertsubtitle\vskip0pt plus 1filll\else%
+  \hbox{\hskip-.01\paperwidth
+    \vbox{
+      \vskip.05\paperheight
+      \usebeamerfont{subtitle}\insertsubtitle\par
+    }
+  }
+  \fi
+
+  \vskip.54\paperheight
+
+  % Author
+  \ifx\insertauthor\@empty\else%
+  \hbox{\hskip-.01\paperwidth
+    \vbox{
+      \usebeamerfont{author}\insertauthor\par
+    }
+  }
+  \fi
+
+  % Institution
+  \ifx\insertinstitute\@empty\else%
+  \hbox{\hskip-.01\paperwidth
+    \vbox{
+      \vskip.02\paperheight
+      \usebeamerfont{institute}\insertinstitute\par
+    }
+  }
+  \fi
+
+  \vskip0pt plus 1filll
+}
+
+% -------------------------------------------------------------------------------
+% Page background
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+	\useasboundingbox (0,0) rectangle (\the\paperwidth, \the\paperheight) ; 
+	\pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\pgfuseimage{backgroundImage}} ;
+  \end{tikzpicture}
+}
+
+% -------------------------------------------------------------------------------
+% Navigation symbols
+
+\setbeamertemplate{navigation symbols}{}
+
+% -------------------------------------------------------------------------------
+% Footline
+
+\defbeamertemplate*{footline}{infolines theme}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.25ex,dp=1ex,center]{section in footer}%
+    \inserttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.25ex,dp=1ex,center]{subsection in footer}%
+    \insertsectionhead
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.25ex,dp=1ex,center]{pagenumber in footer}%
+   \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}

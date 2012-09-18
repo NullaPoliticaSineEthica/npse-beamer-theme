@@ -1,0 +1,62 @@
+% ====================================================================
+%    ___ ___ ___  __ ___ 
+%   / _ (_-</ _ \/ _/ _ \
+%   \___/__/\___/\__\___/
+%
+%   ~ La Empresa de los Programadores Profesionales ~
+%
+%
+%  | http://www.osoco.es
+%  |
+%  | Edificio Moma Lofts
+%  | Planta 3, Loft 18
+%  | Ctra. Mostoles-Villaviciosa, Km 0,2
+%  | Mostoles, Madrid 28935 España
+%
+% ====================================================================
+%
+% Copyright 2012 OSOCO.
+%
+% by Rafael Luque
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ProvidesPackage{beamerthemeosoco2012}
+
+\RequirePackage{tikz}
+\RequirePackage{ifthen}
+
+\newif\ifosoco@dark
+\osoco@darkfalse
+
+\DeclareOptionBeamer{coverbackgroundimage}{
+	\PassOptionsToPackage{coverbackgroundimage=#1}{beamerouterthemeosoco2012}
+}
+
+\DeclareOptionBeamer{dark}{\osoco@darktrue}
+
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\usecolortheme{osoco2012}
+\useinnertheme{osoco2012}
+\useoutertheme{osoco2012}
+\usefonttheme{osoco2012}
+
+%% Commands and environments
+
+\def\wide#1{\hspace*{-\beamer@leftmargin}#1}
+
+\def\picBackground#1{
+  \usebackgroundtemplate{%
+    \begin{pgfpicture}{0cm}{0cm}{\the\paperwidth}{\the\paperheight}
+      \includegraphics[width=\paperwidth,height=\paperheight]{#1}
+    \end{pgfpicture}
+  }
+}
+
+\def\defaultBackground{
+  \usebackgroundtemplate{}
+}
+

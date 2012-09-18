@@ -1,0 +1,100 @@
+% ====================================================================
+%    ___ ___ ___  __ ___ 
+%   / _ (_-</ _ \/ _/ _ \
+%   \___/__/\___/\__\___/
+%
+%   ~ La Empresa de los Programadores Profesionales ~
+%
+%
+%  | http://www.osoco.es
+%  |
+%  | Edificio Moma Lofts
+%  | Planta 3, Loft 18
+%  | Ctra. Mostoles-Villaviciosa, Km 0,2
+%  | Mostoles, Madrid 28935 EspaÃ±a
+%
+% ====================================================================
+%
+% Copyright 2012 OSOCO.
+%
+% by Rafael Luque
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass{beamer}
+
+\usetheme[dark]{osoco2012}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+% Metadata
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Sample Presentation Title}
+\subtitle{The subtitle goes here}
+\author{Rafael Luque \href{http://twitter.com/rafael_luque}{@rafael\_luque}}
+\institute[OSOCO]{%
+  \href{http://osoco.es}{OSOCO}
+}
+\date[09/2012]{Septiembre 2012}
+\subject{LaTeX BEAMER Theme}
+\keywords{LaTeX, BEAMER, themes, presentations}
+
+% Contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}[plain]{Contents}
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{First Section}
+
+\subsection{A subsection}
+
+\begin{frame}{First slide}
+	\begin{columns}[t]
+		\column{.5\textwidth}
+		\begin{block}{Box left}
+			\begin{itemize}
+				\item Item 1
+				\item Item 2
+				\item Item 3
+				\item Item 4				
+				\item Item 5
+			\end{itemize}
+		\end{block}
+		\pause
+
+		\column{.5\textwidth}
+		\begin{block}{Box right}
+			\begin{itemize}
+				\item Item 1
+				\item Item 2
+				\item Item 3
+			\end{itemize}
+		\end{block}
+	\end{columns}
+\end{frame}
+
+\section{Second Section}
+
+\begin{frame}{Second slide}
+  \begin{alertblock}{Warning}
+  \begin{enumerate}
+    \item Item 1
+    \item Item 2
+    \item Item 3
+    \item Item 4
+  \end{enumerate}
+  \end{alertblock}
+\end{frame}
+
+\end{document}

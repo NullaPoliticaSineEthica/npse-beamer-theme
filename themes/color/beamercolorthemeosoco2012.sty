@@ -1,0 +1,49 @@
+% ====================================================================
+%    ___ ___ ___  __ ___ 
+%   / _ (_-</ _ \/ _/ _ \
+%   \___/__/\___/\__\___/
+%
+%   ~ La Empresa de los Programadores Profesionales ~
+%
+%
+%  | http://www.osoco.es
+%  |
+%  | Edificio Moma Lofts
+%  | Planta 3, Loft 18
+%  | Ctra. Mostoles-Villaviciosa, Km 0,2
+%  | Mostoles, Madrid 28935 España
+%
+% ====================================================================
+%
+% Copyright 2012 OSOCO.
+%
+% by Rafael Luque
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ProvidesPackage{beamercolorthemeosoco2012}
+
+\mode<presentation>
+
+%% Color definitions
+\definecolor{orangesoft}{RGB}{255,143,37}
+\definecolor{orangesoftgreen}{RGB}{197,189,76}
+\definecolor{paleblue}{RGB}{96,123,139}
+
+\setbeamercolor{title in cover}{fg=white}
+
+\ifosoco@dark%
+    \usecolortheme{seagull}
+    \setbeamercolor*{frametitle}{fg=white}
+\else%
+    \usecolortheme{rose}
+    \setbeamercolor{structure}{fg=black}
+    \setbeamercolor{section in footer}{fg=black,bg=}
+    \setbeamercolor{subsection in footer}{fg=black,bg=}
+    \setbeamercolor{pagenumber in footer}{fg=black,bg=}
+    \setbeamercolor*{frametitle}{fg=black}
+\fi%
+
+
+\mode
+<all>
