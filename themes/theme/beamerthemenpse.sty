@@ -1,0 +1,49 @@
+% ====================================================================
+%
+% Copyleft 2016-today NullaPoliticaSineEthica.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ProvidesPackage{beamerthemenpse}
+
+\RequirePackage{tikz}
+\RequirePackage{ifthen}
+
+\newif\ifnpse@dark
+\npse@darkfalse
+
+\DeclareOptionBeamer{coverbackgroundimage}{
+	\PassOptionsToPackage{coverbackgroundimage=#1}{beamerouterthemenpse}
+}
+
+\DeclareOptionBeamer{clientimage}{
+	\PassOptionsToPackage{clientimage=#1}{beamerouterthemenpse}
+}
+
+\DeclareOptionBeamer{dark}{\npse@darktrue}
+
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\usecolortheme{npse}
+\useinnertheme{npse}
+\useoutertheme{npse}
+\usefonttheme{npse}
+
+%% Commands and environments
+
+\def\wide#1{\hspace*{-\beamer@leftmargin}#1}
+
+\def\picBackground#1{
+  \usebackgroundtemplate{%
+    \begin{pgfpicture}{0cm}{0cm}{\the\paperwidth}{\the\paperheight}
+      \includegraphics[width=\paperwidth,height=\paperheight]{#1}
+    \end{pgfpicture}
+  }
+}
+
+\def\defaultBackground{
+  \usebackgroundtemplate{}
+}
+

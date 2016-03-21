@@ -1,38 +1,23 @@
 % ====================================================================
-%    ___ ___ ___  __ ___ 
-%   / _ (_-</ _ \/ _/ _ \
-%   \___/__/\___/\__\___/
 %
-%   ~ La Empresa de los Programadores Profesionales ~
-%
-%
-%  | http://www.osoco.es
-%  |
-%  | Edificio Moma Lofts
-%  | Planta 3, Loft 18
-%  | Ctra. Mostoles-Villaviciosa, Km 0,2
-%  | Mostoles, Madrid 28935 España
-%
-% ====================================================================
-%
-% Copyright 2012 OSOCO.
-%
-% by Rafael Luque
+% Copyleft 2016-today NullaPoliticaSineEthica
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ProvidesPackage{beamercolorthemeosoco2012}
+\ProvidesPackage{beamercolorthemenpse}
 
 \mode<presentation>
 
 %% Color definitions
-\definecolor{orangesoft}{RGB}{255,143,37}
-\definecolor{orangesoftgreen}{RGB}{197,189,76}
+\definecolor{orange}{RGB}{255,143,37}
+\definecolor{orangegreen}{RGB}{197,189,76}
 \definecolor{paleblue}{RGB}{96,123,139}
+\definecolor{npsegreen}{RGB}{120,179,69}
+\definecolor{npseblue}{RGB}{51,85,97}
 
 \setbeamercolor{title in cover}{fg=white}
 
-\ifosoco@dark%
+\ifnpse@dark%
     \usecolortheme{seagull}
     \setbeamercolor*{frametitle}{fg=white}
 \else%
@@ -44,6 +29,9 @@
     \setbeamercolor*{frametitle}{fg=black}
 \fi%
 
+\setbeamercolor{block title}{bg=npseblue,fg=white}
+\setbeamercolor{block title alerted}{bg=npsegreen,fg=black}
+\setbeamercolor{alerted text}{fg=npsegreen}
 
 \mode
 <all>

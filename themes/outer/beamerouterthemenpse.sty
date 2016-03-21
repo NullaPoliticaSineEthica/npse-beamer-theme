@@ -1,44 +1,27 @@
 % ====================================================================
-%    ___ ___ ___  __ ___ 
-%   / _ (_-</ _ \/ _/ _ \
-%   \___/__/\___/\__\___/
 %
-%   ~ La Empresa de los Programadores Profesionales ~
-%
-%
-%  | http://www.osoco.es
-%  |
-%  | Edificio Moma Lofts
-%  | Planta 3, Loft 18
-%  | Ctra. Mostoles-Villaviciosa, Km 0,2
-%  | Mostoles, Madrid 28935 España
-%
-% ====================================================================
-%
-% Copyright 2012 OSOCO.
-%
-% by Rafael Luque
+% Copyleft 2016-today NullaPoliticaSineEthica
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ProvidesPackage{beamerouterthemeosoco2012}
+\ProvidesPackage{beamerouterthemenpse}
 
 \RequirePackage{tikz}
 
-\ifosoco@dark%
-  \def\osoco@coverimage{osoco-cover-dark}
-  \def\osoco@coverbackgroundimage{defaultbackground-dark.jpg}
-  \def\osoco@backgroundimage{osoco-bg-dark}
+\ifnpse@dark%
+  \def\npse@coverimage{npse-cover-dark}
+  \def\npse@coverbackgroundimage{defaultbackground-dark.jpg}
+  \def\npse@backgroundimage{npse-bg-dark}
 \else%
-  \def\osoco@coverimage{osoco-cover-light}
-  \def\osoco@coverbackgroundimage{defaultbackground-light.jpg}
-  \def\osoco@backgroundimage{osoco-bg-light}
+  \def\npse@coverimage{npse-cover-light}
+  \def\npse@coverbackgroundimage{defaultbackground-light.jpg}
+  \def\npse@backgroundimage{npse-bg-light}
 \fi%
 
-\DeclareOptionBeamer{coverbackgroundimage}{\def\osoco@coverbackgroundimage{#1}}
+\DeclareOptionBeamer{coverbackgroundimage}{\def\npse@coverbackgroundimage{#1}}
 
-\def\osoco@clientimage{}
-\DeclareOptionBeamer{clientimage}{\def\osoco@clientimage{#1}}
+\def\npse@clientimage{}
+\DeclareOptionBeamer{clientimage}{\def\npse@clientimage{#1}}
 
 \ProcessOptionsBeamer
 
@@ -46,14 +29,14 @@
 \mode<presentation>
 
 
-\pgfdeclareimage[interpolate=true, height=\the\paperheight, width=\the\paperwidth]{coverBackgroundImage}{\osoco@coverbackgroundimage}
+\pgfdeclareimage[interpolate=true, height=\the\paperheight, width=\the\paperwidth]{coverBackgroundImage}{\npse@coverbackgroundimage}
 
-\pgfdeclareimage[interpolate=true, height=\the\paperheight, width=\the\paperwidth]{coverImage}{\osoco@coverimage}
+\pgfdeclareimage[interpolate=true, height=\the\paperheight, width=\the\paperwidth]{coverImage}{\npse@coverimage}
 
-\pgfdeclareimage[interpolate=true, height=\the\paperheight, width=\the\paperwidth]{backgroundImage}{\osoco@backgroundimage}
+\pgfdeclareimage[interpolate=true, height=\the\paperheight, width=\the\paperwidth]{backgroundImage}{\npse@backgroundimage}
 
-\if\osoco@clientimage\@empty\else%
-\pgfdeclareimage[interpolate=true, width=1.5cm]{clientImage}{\osoco@clientimage}
+\if\npse@clientimage\@empty\else%
+\pgfdeclareimage[interpolate=true, width=1.5cm]{clientImage}{\npse@clientimage}
 \fi%
 
 % -------------------------------------------------------------------------------
@@ -95,13 +78,13 @@
   \ifx\insertsubtitle\vskip0pt plus 1filll\else%
   \hbox{\hskip-.01\paperwidth
     \vbox{
-      \vskip.05\paperheight
+      \vskip.055\paperheight
       \usebeamerfont{subtitle}\insertsubtitle\par
     }
   }
   \fi
 
-  \vskip.54\paperheight
+  \vskip.59\paperheight
 
   % Author
   \ifx\insertauthor\@empty\else%
@@ -116,7 +99,7 @@
   \ifx\insertinstitute\@empty\else%
   \hbox{\hskip-.01\paperwidth
     \vbox{
-      \vskip.02\paperheight
+      \vskip.04\paperheight
       \usebeamerfont{institute}\insertinstitute\par
     }
   }
@@ -134,7 +117,7 @@
 	\pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\pgfuseimage{backgroundImage}} ;
 
     % Licensed to client
-    \ifx\osoco@clientimage\@empty\else%
+    \ifx\npse@clientimage\@empty\else%
       \pgftext[at=\pgfpoint{11cm}{.7cm},left,base]{\pgfuseimage{clientImage}} ;
     \fi
 

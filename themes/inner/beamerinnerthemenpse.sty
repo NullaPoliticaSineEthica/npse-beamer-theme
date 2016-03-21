@@ -1,0 +1,22 @@
+% ====================================================================
+%
+% Copyleft 2016-today NullaPoliticaSineEthica
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ProvidesPackage{beamerinnerthemenpse}
+
+\mode<presentation>
+
+\useinnertheme[shadow=false]{rounded}
+
+%% Templates
+\setbeamertemplate{sections/subsections in toc}[square] % toc
+\setbeamertemplate{items}[circle] % items
+\ifnpse@dark%
+\addtobeamertemplate{block begin}{\pgfsetfillopacity{0.55}}{\pgfsetfillopacity{1}}
+\addtobeamertemplate{block alerted begin}{\pgfsetfillopacity{0.55}}{\pgfsetfillopacity{1}}
+\else%
+\addtobeamertemplate{block begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+\addtobeamertemplate{block alerted begin}{\pgfsetfillopacity{0.85}}{\pgfsetfillopacity{1}}
+\fi%
